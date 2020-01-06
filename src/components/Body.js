@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import Search from "./Search";
 
 const Body = () => {
+  const [searchValue, setSearchValue] = useState("");
   return (
     <div>
-      <Search />
+      <Search searchValue={searchValue} setSearchValue={setSearchValue} />
+      <pre>{JSON.stringify({ searchValue }, null, 2)}</pre>
     </div>
   );
 };
