@@ -16,13 +16,18 @@ const Body = () => {
       }).then(res => {
         const { data } = res;
         const { Response, Search } = data;
-        if (Response === "True") {
-          setError(null);
-          setResults(Search);
-        } else if (Response === "False") {
-          setError(data.Error);
-        } else {
-          setError(JSON.stringify({ data }, null, 2));
+
+        switch (Response) {
+          case "True":
+            setError(null);
+            setResults(Search);
+            break;
+          case "False":
+            setError(data.Error);
+            break;
+          default:
+            setError(JSON.stringify({ data }, null, 2));
+            break;
         }
       });
     } else {
@@ -35,13 +40,11 @@ const Body = () => {
       {error && <span className="error">{error}</span>}
       {!error && results && (
         <div className="results">
-          {results.map(({ imdbID, Poster, Title, Type, Year }, i) => (
+          {results.map(({ Poster, Title, Year }, i) => (
             <SearchResult
-              id={imdbID}
               key={i}
               posterURL={Poster}
               title={Title}
-              type={Type}
               year={Year}
             />
           ))}

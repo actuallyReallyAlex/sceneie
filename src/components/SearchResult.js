@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 
 const SearchResult = ({ posterURL, title, year }) => {
   const randomNumber = Math.floor(Math.random() * 333) + 1;
+
   return (
     <div className="search-result">
       <h2>{title}</h2>
@@ -21,10 +22,8 @@ const SearchResult = ({ posterURL, title, year }) => {
 };
 
 SearchResult.propTypes = {
-  imdbID: PropTypes.string,
   posterURL: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
-  type: PropTypes.string.isRequired,
   year: PropTypes.string.isRequired
 };
 
