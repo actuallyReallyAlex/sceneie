@@ -12,7 +12,7 @@ const Body = () => {
     if (searchValue) {
       axios({
         method: "GET",
-        url: `http://www.omdbapi.com/?apikey=${process.env.REACT_APP_API_KEY}&s=${searchValue}`
+        url: `https://www.omdbapi.com/?apikey=${process.env.REACT_APP_API_KEY}&s=${searchValue}`
       }).then(res => {
         const { data } = res;
         const { Response, Search } = data;
