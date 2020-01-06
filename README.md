@@ -35,4 +35,4 @@ Created from a list of demo project ideas from [9 Projects you can do to become 
 
 ## 🎉 Acknowledgements <a name = "acknowledgement"></a>
 
-- opcorn Icon made by [mynamepong](https://www.flaticon.com/authors/mynamepong) from [www.flaticon.com](https://www.flaticon.com/).
+- Popcorn Icon made by [mynamepong](https://www.flaticon.com/authors/mynamepong) from [www.flaticon.com](https://www.flaticon.com/).
