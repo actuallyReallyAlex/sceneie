@@ -25,12 +25,14 @@ const Body = () => {
           setError(JSON.stringify({ data }, null, 2));
         }
       });
+    } else {
+      setError(null);
     }
   }, [searchValue]);
   return (
-    <div>
+    <div id="body">
       <Search searchValue={searchValue} setSearchValue={setSearchValue} />
-      {error && <span>{error}</span>}
+      {error && <span className="error">{error}</span>}
       {!error && results && (
         <div className="results">
           {results.map(({ imdbID, Poster, Title, Type, Year }, i) => (
