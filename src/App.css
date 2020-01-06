@@ -23,8 +23,14 @@
   align-items: center;
   display: flex;
   flex-direction: column;
+  justify-content: flex-end;
   margin: 25px;
   max-width: 300px;
+}
+
+.search-result__poster {
+  height: 450px;
+  width: 300px;
 }
 
 .search-result__year {
