@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Search from "./Search";
 import axios from "axios";
+import SearchResult from "./SearchResult";
 
 const Body = () => {
   const [searchValue, setSearchValue] = useState("");
@@ -14,10 +15,10 @@ const Body = () => {
         url: `http://www.omdbapi.com/?apikey=${process.env.REACT_APP_API_KEY}&s=${searchValue}`
       }).then(res => {
         const { data } = res;
-        const { Response } = data;
+        const { Response, Search } = data;
         if (Response === "True") {
           setError(null);
-          setResults(data);
+          setResults(Search);
         } else if (Response === "False") {
           setError(data.Error);
         } else {
@@ -30,7 +31,20 @@ const Body = () => {
     <div>
       <Search searchValue={searchValue} setSearchValue={setSearchValue} />
       {error && <span>{error}</span>}
-      {!error && <pre>{JSON.stringify({ results }, null, 2)}</pre>}
+      {!error && results && (
+        <div className="results">
+          {results.map(({ imdbID, Poster, Title, Type, Year }, i) => (
+            <SearchResult
+              id={imdbID}
+              key={i}
+              posterURL={Poster}
+              title={Title}
+              type={Type}
+              year={Year}
+            />
+          ))}
+        </div>
+      )}
     </div>
   );
 };
