@@ -1,17 +1,21 @@
-import React, { Fragment } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 
 const Search = ({ searchValue, setSearchValue }) => {
   return (
-    <Fragment>
-      <label htmlFor="search">Search</label>
+    <div className="search__container">
+      <label className="search__label" htmlFor="search">
+        Search
+      </label>
       <input
+        className="search__input"
         id="search"
         onChange={e => setSearchValue(e.target.value)}
+        placeholder="Search"
         type="text"
         value={searchValue}
       />
-    </Fragment>
+    </div>
   );
 };
 
