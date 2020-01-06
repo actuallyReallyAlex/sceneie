@@ -14,7 +14,7 @@
   "bugs": {
     "url": "https://github.com/alexlee-dev/sceneie/issues"
   },
-  "homepage": "https://github.com/alexlee-dev/sceneie#readme",
+  "homepage": "https://sceneie.netlify.com/",
   "dependencies": {
     "axios": "^0.19.0",
     "cra-template": "1.0.0",
